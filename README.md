@@ -7,11 +7,21 @@ Welcome to Bayport's DevOps skills assessment.
 Please fork this repository and answer any questions on this markdown document.
 
 # Linux
-* What is the command to list the contents of a direcory, line by line and ordered by size ascending in human readable format?
-* How would you add a DNS server to a network interface in Linux?
+* What is the command to list the contents of a direcory, line by line and ordered by size ascending in human readable format? 
+      #ls -lSrh
+      
+* How would you add a DNS server to a network interface in Linux? 
+      Add entry to /etc/network/interfaces and or /etc/resolv.conf
+      
 * If the DNS server you've just added is not reachable, how can you get any particular hostname to resolve locally? 
-* How would you check for SELinux related errors?
+      Edit the /etc/hosts file and add the hostname and ip
+      
+* How would you check for SELinux related errors? 
+      Check file /var/log/messages and or /var/log/audit/audit.log
+      
 * Write the commands to add 30GB disk space to a logical volume named "docker" that belongs to a logical group named "docker-group".
+      lvextend -L+30G /docker
+      
 * In the root of this repository, create a Bash script called "listit.sh", when executed, this script must do the following (in order):
     * Create a file called directories.list that contains the directory names only of the current directory.
     * Add a line at the beginning of the directories.list file that reads "line one's line".
