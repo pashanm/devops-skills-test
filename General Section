@@ -5,3 +5,5 @@ How would you ensure any change made to this Dockerfile is source controlled, ap
   Git( data integrity repo, centeral source of data, collaboration between various parties involved), Vault, Jenkins, Docker Hub ; Prometheus / Grafana (monitoring, webinterface, alertting)
   
 Commit and push your changes.
+git commit -m pashanm 
+git push
