@@ -1,0 +1,7 @@
+General
+How would you ensure any change made to this Dockerfile is source controlled, approved, tested and deployed. Explain which tools you will use as if this was going into a production environment.
+  use CI/CD applications / tools: Python(programming, code) Terrraform(coding), Atlantis(coding,avoid minimal errors) ,Packer(create scripts), 
+  Saltstack(automation) 
+  Git( data integrity repo, centeral source of data, collaboration between various parties involved), Vault, Jenkins, Docker Hub ; Prometheus / Grafana (monitoring, webinterface, alertting)
+  
+Commit and push your changes.
