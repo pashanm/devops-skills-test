@@ -1,21 +1,24 @@
 #!/bin/bash
+PACKAGE_NAME=docker
 
-NOT_INSTALLED=\`echo \$(systemctl status docker 2>&1 || :) | grep "could not be found" || :\`
-if [  ! -z "\$NOT_INSTALLED" ]; then
+if rpm -q $PACKAGE_NAME | grep "not installed" > /dev/null #If package not yet installed
+  then
+  echo "Installing $i ..."
+  yum install -y $PACKAGE_NAME
+fi
 
-yum install docker
+docker run --name=ALFRED - /var/lib/mysql:/BATCAVE
 
-systemctl start docker
+if [ docker container inspect ALFRED ]
+  then
+  docker remove ALFRED
+fi
 
-process=`docker ps | grep ALFRED | wc -l`
-if [  $process==0 ]; then
-docker run -v /BATCAVE --mount src=/var/lib/mysql",target=/var/lib/mysql,type=bind -other -options ALFRED
-else
-echo "image running"
 CREATE SCHEMA wayneindustries;
-mqsql wayneindustries;
-CREATE TABLE `fox` (
-        `id` INT,
-        `name` VARCHAR(50) NULL DEFAULT '',
-    ) COLLATE='utf8_bin';
-INSERT INTO fox (50,'BATMOBILE');
+CREATE TABLE fox (
+id MEDIUMINT NOT NULL AUTO_INCREMENT,
+name CHAR(30) NOT NULL,
+);
+
+INSERT INTO fox (ID, name)
+VALUES (50, BATMOBILE)
